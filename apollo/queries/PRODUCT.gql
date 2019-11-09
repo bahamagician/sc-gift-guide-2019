@@ -1,0 +1,13 @@
+query PRODUCT($slug: String!) {
+  product(slug: $slug) {
+    id
+    title
+    description
+    sku
+    gender
+    images {
+      index
+      url
+    }
+  }
+}

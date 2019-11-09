@@ -1,0 +1,20 @@
+query PAGINATED_PRODUCTS($per_page: Int!, $page: Int!) {
+  paginatedProducts(per_page: $per_page, page: $page) {
+    nodes {
+      id
+      slug
+      title
+      price
+      gender
+      brands {
+        title
+      }
+    }
+    meta {
+      count
+      lastPage
+      currentPage
+      total
+    }
+  }
+}

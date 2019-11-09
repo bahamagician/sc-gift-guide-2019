@@ -1,41 +1,51 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        sc-gift-guide-2019
-      </h1>
-      <h2 class="subtitle">
-        Holiday Gift Guide 2019
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <ApolloQuery
+      :query="require('@/apollo/queries/PAGINATED_PRODUCTS.gql')"
+      :variables="{
+        page: this.page,
+        per_page: this.per_page
+      }"
+      @result="dataLoaded"
+    >
+      <template v-slot="{ result: { loading, error, data } }">
+        <!-- Error -->
+        <div v-if="error">
+          <Error :error="error" />
+        </div>
+        <div v-if="!data">
+          <Loading />
+        </div>
+        <div v-else>
+          <div v-for="product in paginatedProducts.nodes" :key="product.id">
+            <div>
+              <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
+            </div>
+          </div>
+        </div>
+      </template>
+    </ApolloQuery>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Loading from "@/components/Loading.vue";
 
 export default {
-  components: {
-    Logo
+  components: { Loading },
+  data() {
+    return {
+      paginatedProducts: "",
+      per_page: 10,
+      page: 1
+    };
+  },
+  methods: {
+    dataLoaded({ data }) {
+      data && (this.paginatedProducts = data.paginatedProducts);
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -54,8 +64,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

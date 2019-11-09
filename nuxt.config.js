@@ -43,8 +43,31 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: ['@nuxtjs/apollo'],
+
+  // Give apollo module options
+  apollo: {
+
+    defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network',
+        // fetchPolicy: 'cache-first',
+        notifyOnNetworkStatusChange: true,
+      },
+    },
+
+    clientConfigs: {
+      default: {
+        // required
+        httpEndpoint: 'http://localhost:8000'
+      },
+
+    }
+  },
+
   /*
   ** Build configuration
   */
