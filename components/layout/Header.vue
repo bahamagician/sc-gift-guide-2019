@@ -11,38 +11,22 @@
     <div
       class="flex justify-center bg-christmas-red text-xl text-white p-5 font-display font-bold text-center"
     >
-      <ul class="flex">
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Gifts for Him
-          </a>
-        </li>
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Gifts for Her
-          </a>
-        </li>
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Gifts for Kids
-          </a>
-        </li>
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Gifts for Fitness Buffs
-          </a>
-        </li>
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Splurge Worthy
-          </a>
-        </li>
-        <li class="mr-6">
-          <a href="#">
-            <i class="fas fa-gift"></i>&nbsp;Secret Santa Gifts
-          </a>
-        </li>
-      </ul>
+      <ApolloQuery
+        :query="require('@/apollo/queries/MENU.gql')"
+        :variables="{ slug: 'footwer-nav'}"
+      >
+        <template v-slot="{ result: { loading, error, data } }">
+          <!-- Loading -->
+          <div v-if="!data">
+            <Loading />
+          </div>
+          <ul v-else class="flex">
+            <li class="mr-6" v-for="item in data.menu.items">
+              <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
+            </li>
+          </ul>
+        </template>
+      </ApolloQuery>
     </div>
   </div>
 </template>

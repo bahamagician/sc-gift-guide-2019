@@ -1,0 +1,14 @@
+query GROUP($slug: String!) {
+  group(slug: $slug) {
+    id
+    title
+    slug
+    banner
+    products {
+      id
+      title
+      featuredImage
+      slug
+    }
+  }
+}
