@@ -17,11 +17,21 @@
           <Loading />
         </div>
         <div v-else>
-          <div v-for="product in paginatedProducts.nodes" :key="product.id">
-            <div>
-              <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
+          <masonry
+            :cols="{default: 5, 2000: 4, 1500:3, 1000: 2, 700: 1}"
+            :gutter="{default: '30px', 700: '15px'}"
+          >
+            <div v-for="product in paginatedProducts.nodes" :key="product.id">
+              <div class="border-solid border border-gray-300 p-5 bg-white shadow-lg">
+                <nuxt-link :to="`/product/${product.slug}`">
+                  <img src="https://via.placeholder.com/150" class="w-full h-auto rounded-lg" />
+                </nuxt-link>
+                <h2 class="text-xl py-4">
+                  <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
+                </h2>
+              </div>
             </div>
-          </div>
+          </masonry>
         </div>
       </template>
     </ApolloQuery>

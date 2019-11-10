@@ -1,32 +1,28 @@
 <template>
-  <div class="bg-christmas-red shadow-inner">
-    <div class="text-white text-center p-10">
-      <div class="flex justify-center">
-        <img class="logo" src="/logo-white.png" />
-      </div>
-      <div class="flex justify-center mt-5 font-display text-3xl">
-        242.394.7660
+  <footer class="footer mt-5">
+    <div class="bg-darkGrey shadow-inner">
+      <div class="mx-auto px-4 py-4 flex">
+        <div class="w-full text-center text-center">
+          <h2 class="font-display">Don't See What You're Looking For?</h2>
+          <p>We partner with equipment providers throughout the world, so if you can't find what you're looking for, simply let us know and we'll get on it right away!</p>
+          <p class="py-4">
+            <g-link
+              class="text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
+              to="/contact-us"
+            >Contact Us</g-link>
+          </p>
         </div>
-      <div class="flex justify-center mt-5">
-        <a href="#" target="_blank" class="pr-4 underline">Harbour Bay</a>
-        <a href="#" target="_blank" class="pr-4 underline">Marathon Mall</a>
-        <a href="#" target="_blank" class="underline">Sandyport Plaza</a>
       </div>
     </div>
-    <div class="text-white bg-footer-red p-4 flex">
-      <div class="sm:full w-1/2">&copy; Copyright 2019 The Sports Center</div>
+
+    <div class="bg-primary text-white px-4 py-4 flex">
+      <div class="full sm:w-2/3 text-center sm:text-left">&copy; 2019 The Sports Center Ltd.</div>
       <div
-        class="sm:full w-1/2 text-right"
-      >Prices Displayed on the Website Do Not Include Value Added Tax</div>
+        class="sm:w-1/3 text-right hidden sm:block"
+      >Prices displayed on website are not inclusive of VAT.</div>
     </div>
-  </div>
+  </footer>
 </template>
 <script>
 export default {};
 </script>
-<style scoped>
-.logo {
-  max-width: 220px;
-  height: auto;
-}
-</style>

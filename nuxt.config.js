@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lora:400,700|family=Roboto:400,700&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Unica+One|Roboto:100,300,400,500,900|Graduate&display=swap' }
     ],
     script: [
       { src: 'https://kit.fontawesome.com/0382c824e2.js', crossorigin: 'anonymous'}
@@ -31,8 +31,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: ['@/plugins/masonry'],
   /*
   ** Nuxt.js dev-modules
   */
