@@ -1,13 +1,19 @@
-query PAGINATED_PRODUCTS($per_page: Int!, $page: Int!) {
-  paginatedProducts(per_page: $per_page, page: $page) {
+query PAGINATED_PRODUCTS($per_page: Int!, $page: Int!, $brand: String) {
+  paginatedProducts(per_page: $per_page, page: $page, brand: $brand) {
     nodes {
       id
       slug
       title
       price
+      images {
+        index
+        url
+      }
       gender
       brands {
+        id
         title
+        slug
       }
     }
     meta {

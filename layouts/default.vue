@@ -29,6 +29,7 @@ body,
 html {
   height: 100%;
   min-height: 100%;
+  @apply font-body;
 }
 
 .content-wrapper {
@@ -39,10 +40,5 @@ html {
   @screen md {
     display: inline;
   }
-}
-.banner {
-  background-color: #ffc215;
-  box-shadow: inset 0px 11px 8px -10px rgba(0, 0, 0, 0.47),
-    inset 0px -11px 8px -10px rgba(0, 0, 0, 0.47);
 }
 </style>

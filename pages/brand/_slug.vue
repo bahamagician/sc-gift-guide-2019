@@ -4,7 +4,8 @@
       :query="require('@/apollo/queries/PAGINATED_PRODUCTS.gql')"
       :variables="{
         page: this.page,
-        per_page: this.per_page
+        per_page: this.per_page,
+        brand: this.$route.params.slug
       }"
       @result="dataLoaded"
     >

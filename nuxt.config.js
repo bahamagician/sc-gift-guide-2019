@@ -61,7 +61,7 @@ export default {
     clientConfigs: {
       default: {
         // required
-        httpEndpoint: 'http://localhost:8000'
+        httpEndpoint: 'https://fierce-taiga-68339.herokuapp.com/'
       },
 
     }
