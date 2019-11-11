@@ -13,15 +13,23 @@
             class="w-full h-auto rounded-t-lg"
           />
         </nuxt-link>
-        <div class="p-2">
+        <div>
           <h2 class="py-4 text-gray-900 text-base text-center">
             <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
           </h2>
-          <ul class="text-gray-600 text-center -mt-3">
+          <ul class="text-gray-600 text-center -mt-3 pb-2">
             <li class="brand" v-for="brand in product.brands" :key="brand.id">
               <nuxt-link :to="`/brand/${brand.slug}`">{{ brand.title }}</nuxt-link>
             </li>
           </ul>
+          <div class="bg-gray-100 rounded-b-lg">
+            <div class="flex p-2">
+              <div class="w-1/2 text-sm">
+                <i class="far fa-calendar-alt"></i> Added 10/10/10
+              </div>
+              <div class="text-right w-1/2">View More</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
