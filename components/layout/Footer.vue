@@ -6,10 +6,10 @@
           <h2 class="font-display">Don't See What You're Looking For?</h2>
           <p>We partner with equipment providers throughout the world, so if you can't find what you're looking for, simply let us know and we'll get on it right away!</p>
           <p class="py-4">
-            <g-link
+            <nuxt-link
               class="text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
               to="/contact-us"
-            >Contact Us</g-link>
+            >Contact Us</nuxt-link>
           </p>
         </div>
       </div>

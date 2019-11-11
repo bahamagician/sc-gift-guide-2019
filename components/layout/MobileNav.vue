@@ -15,93 +15,31 @@
         </svg>
       </a>
     </span>
-    <ul>
-      <!-- <div class="container mx-auto mt-20">
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/"
-          >Home</g-link>
+    <ApolloQuery :query="require('@/apollo/queries/MENU.gql')" :variables="{ slug: 'footwer-nav'}">
+      <template v-slot="{ result: { loading, error, data } }">
+        <!-- Loading -->
+        <div v-if="!data">Loading</div>
+        <div v-else>
+          <div class="mx-auto mt-20">
+            <div @click="$emit('close')">
+              <nuxt-link
+                class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
+                to="/"
+              >Home</nuxt-link>
+            </div>
+            <template v-for="item in data.menu.items">
+              <div @click="$emit('close')" v-if="!item.children">
+                <nuxt-link
+                  class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
+                  :to="item.url"
+                >{{ item.title }}</nuxt-link>
+              </div>
+              <accordion v-else :title="item.title" :items="item.children" @close="$emit('close')" />
+            </template>
+          </div>
         </div>
-
-        <accordion title="Basketball">
-          <ul>
-            <li v-for="item in basketball" @click="$emit('close')">
-              <g-link
-                class="text-primary pl-10 tab__link p-4 block no-underline border-t-2 border-gray justify-between"
-                :to="item.url"
-              >
-                <i class="fas fa-chevron-right mr-3"></i>
-                {{ item.title }}
-              </g-link>
-            </li>
-          </ul>
-        </accordion>
-
-        <accordion title="Baseball & Softball">
-          <ul>
-            <li v-for="item in baseballSoftball" @click="$emit('close')">
-              <g-link
-                class="text-primary pl-10 tab__link p-4 block no-underline border-t-2 border-gray justify-between"
-                :to="item.url"
-              >
-                <i class="fas fa-chevron-right mr-3"></i>
-                {{ item.title }}
-              </g-link>
-            </li>
-          </ul>
-        </accordion>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/soccer"
-          >Soccer</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/track-and-field"
-          >Track & Field</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/raquet-sports"
-          >Raquet Sports</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/volleyball"
-          >Volleyball</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/misc"
-          >Physical Ed. & Accessories</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/tags/equipment-bags"
-          >Bags</g-link>
-        </div>
-
-        <div @click="$emit('close')">
-          <g-link
-            class="text-primary tab__link p-4 block no-underline border-t-2 border-primary flex justify-between"
-            to="/contact-us"
-          >Contact Us</g-link>
-        </div>
-      </div>-->
-    </ul>
+      </template>
+    </ApolloQuery>
   </div>
 </template>
 <script>
@@ -110,50 +48,5 @@ export default {
   components: {
     Accordion
   },
-  data() {
-    return {
-      basketball: [
-        {
-          title: "Basketballs",
-          url: "/tags/basketballs"
-        },
-        {
-          title: "Nets",
-          url: "/tags/basketball-nets"
-        },
-        {
-          title: "Scoreboards",
-          url: "/tags/basketball-scoreboards"
-        },
-        {
-          title: "Goals",
-          url: "/tags/basketball-goals"
-        },
-        {
-          title: "In-Ground Systems",
-          url: "/tags/in-ground-basketball-systems"
-        }
-      ],
-      baseballSoftball: [
-        {
-          title: "Balls",
-          url: "/tags/baseball-softball"
-        },
-        {
-          title: "Protection",
-          url: "/tags/baseball-softball-protection"
-        },
-        {
-          title: "Accessories",
-          url: "/tags/baseball-softball-accessories"
-        }
-      ]
-    };
-  },
-  methods: {
-    whaps() {
-      console.log("rah");
-    }
-  }
 };
 </script>

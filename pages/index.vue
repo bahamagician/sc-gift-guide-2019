@@ -16,22 +16,8 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else>
-          <masonry
-            :cols="{default: 5, 2000: 4, 1500:3, 1000: 2, 700: 1}"
-            :gutter="{default: '30px', 700: '15px'}"
-          >
-            <div v-for="product in paginatedProducts.nodes" :key="product.id">
-              <div class="border-solid border border-gray-300 p-5 bg-white shadow-lg">
-                <nuxt-link :to="`/product/${product.slug}`">
-                  <img src="https://via.placeholder.com/150" class="w-full h-auto rounded-lg" />
-                </nuxt-link>
-                <h2 class="text-xl py-4">
-                  <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
-                </h2>
-              </div>
-            </div>
-          </masonry>
+        <div v-else class="px-4">
+          <MasonryGrid :products="data.paginatedProducts.nodes" />
         </div>
       </template>
     </ApolloQuery>
@@ -40,9 +26,9 @@
 
 <script>
 import Loading from "@/components/Loading.vue";
-
+import MasonryGrid from "@/components/MasonryGrid.vue";
 export default {
-  components: { Loading },
+  components: { Loading, MasonryGrid },
   data() {
     return {
       paginatedProducts: "",
@@ -54,16 +40,12 @@ export default {
     dataLoaded({ data }) {
       data && (this.paginatedProducts = data.paginatedProducts);
     }
-  }
+  },
+  scrollToTop: true
 };
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;

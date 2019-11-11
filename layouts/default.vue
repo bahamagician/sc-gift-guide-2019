@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper relative h-screen" style="background-color:#fcfcfc;">
+  <div class="wrapper relative" style="background-color:#fcfcfc;">
     <div class="content-wrapper">
       <Header />
       <!-- Content -->

@@ -4,26 +4,23 @@
     :variables="{ slug: this.$route.params.slug }"
   >
     <template v-slot="{ result: { loading, error, data } }">
-      <!-- Loading -->
+      <!-- Error -->
+      <div v-if="error">
+        <Error :error="error" />
+      </div>
       <div v-if="!data">
         <Loading />
       </div>
       <div v-else class="px-4">
-        <div class="flex flex-wrap">
-          <div v-for="product in data.group.products" :key="product.id">
-            <div>
-              <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
-            </div>
-          </div>
-        </div>
+        <MasonryGrid :products="data.group.products" />
       </div>
     </template>
   </ApolloQuery>
 </template>
 <script>
 import Loading from "@/components/Loading.vue";
-
+import MasonryGrid from "@/components/MasonryGrid.vue";
 export default {
-  components: { Loading }
+  components: { Loading, MasonryGrid }
 };
 </script>

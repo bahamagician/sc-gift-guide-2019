@@ -16,7 +16,7 @@
           <template v-slot="{ result: { loading, error, data } }">
             <!-- Loading -->
             <div v-if="!data">
-              <Loading />
+              Loading
             </div>
             <ul v-else class="flex">
               <li class="navLinks">
