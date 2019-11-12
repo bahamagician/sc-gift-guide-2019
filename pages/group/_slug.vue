@@ -12,7 +12,7 @@
         <Loading />
       </div>
       <div v-else class="px-4">
-        <MasonryGrid :products="data.group.products" />
+        <MasonryGrid :products="data.group.products.nodes" />
       </div>
     </template>
   </ApolloQuery>

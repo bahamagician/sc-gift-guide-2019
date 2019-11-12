@@ -1,5 +1,5 @@
-query PAGINATED_PRODUCTS($per_page: Int!, $page: Int!, $brand: String) {
-  paginatedProducts(per_page: $per_page, page: $page, brand: $brand) {
+query PRODUCTS($per_page: Int!, $page: Int!, $brand: String) {
+  products(per_page: $per_page, page: $page, brand: $brand) {
     nodes {
       id
       slug

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ApolloQuery
-      :query="require('@/apollo/queries/PAGINATED_PRODUCTS.gql')"
+      :query="require('@/apollo/queries/PRODUCTS.gql')"
       :variables="{
         page: this.page,
         per_page: this.per_page
@@ -17,7 +17,7 @@
           <Loading />
         </div>
         <div v-else class="px-4">
-          <MasonryGrid :products="data.paginatedProducts.nodes" />
+          <MasonryGrid :products="data.products.nodes" />
         </div>
       </template>
     </ApolloQuery>

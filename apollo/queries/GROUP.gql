@@ -1,14 +1,36 @@
-query GROUP($slug: String!) {
+query GROUP(
+  $slug: String!
+  $products_per_page: Int = 10
+  $product_page: Int = 1
+) {
   group(slug: $slug) {
     id
     title
     slug
     banner
-    products {
-      id
-      title
-      featuredImage
-      slug
+    products(per_page: $products_per_page, page: $product_page) {
+      nodes {
+        id
+        slug
+        title
+        price
+        images {
+          index
+          url
+        }
+        gender
+        brands {
+          id
+          title
+          slug
+        }
+      }
+      meta {
+        count
+        lastPage
+        currentPage
+        total
+      }
     }
   }
 }
