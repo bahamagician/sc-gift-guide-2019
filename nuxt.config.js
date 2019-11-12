@@ -27,17 +27,18 @@ export default {
   ** Global CSS
   */
   css: [
+    "@/assets/css/styles.css"
   ],
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/masonry'],
+  plugins: ['@/plugins/masonry', { src: "~plugins/slick-slide.js", mode: 'client' } ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss', '@nuxtjs/moment'
   ],
   /*
   ** Nuxt.js modules

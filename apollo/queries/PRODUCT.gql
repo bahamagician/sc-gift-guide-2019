@@ -5,9 +5,23 @@ query PRODUCT($slug: String!) {
     description
     sku
     gender
+    date
     images {
-      index
-      url
+      id
+      actual
+      thumb
+      medium
+      large
+    }
+    groups {
+      id
+      title
+      slug
+    }
+    brands {
+      id
+      title
+      slug
     }
   }
 }

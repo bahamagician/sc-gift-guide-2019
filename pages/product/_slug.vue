@@ -9,12 +9,47 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else>
-          <div>Title: {{ data.product.title }}</div>
-          <div>Description: {{ data.product.description }}</div>
-          <div>
-            Images:
-            <div v-for="image in data.product.images" :key="image.index">{{ image.url }}</div>
+        <div v-else class="container mx-auto flex flex-wrap">
+          <div
+            class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto flex mb-4"
+            v-if="!data.product.images[1]"
+          >
+            <img class="px-2" :src="data.product.images[0].large" :alt="data.product.title" />
+          </div>
+          <carousel
+            :images="data.product.images"
+            :title="data.product.title"
+            class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto flex mb-4"
+            v-else
+          />
+
+          <div class="w-full md:w-1/2 xxl:w-1/3 xxl:mr-auto px-2">
+            <h1 class="font-display text-2xl">{{ data.product.title }}</h1>
+            <div class="text-xs text-gray-600">
+              <i class="far fa-calendar-alt"></i>
+              Added {{ $moment(data.product.date, "YYYYMMDD").fromNow() }}
+            </div>
+            <div v-for="group in data.product.groups" class="my-5">
+              <nuxt-link :to="`/group/${group.slug}`">
+                <span
+                  class="rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
+                >
+                  <i data-v-a7fd6656 class="fas fa-link"></i>
+                  {{ group.title }}
+                </span>
+              </nuxt-link>
+            </div>
+            <div v-html="data.product.description" class="mb-4"></div>
+            <div>
+              <ul class="text-gray-600 uppercase text-xs">
+                <li v-for="brand in data.product.brands" class="inline underline">
+                  <nuxt-link :to="`/brand/${brand.slug}`">
+                    <i class="fas fa-tag"></i>
+                    {{ brand.title }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </template>
@@ -23,8 +58,8 @@
 </template>
 <script>
 import Loading from "@/components/Loading.vue";
-
+import Carousel from "@/components/Carousel.vue";
 export default {
-  components: { Loading }
+  components: { Loading, Carousel }
 };
 </script>

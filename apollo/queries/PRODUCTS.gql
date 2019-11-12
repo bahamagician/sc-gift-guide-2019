@@ -1,13 +1,18 @@
-query PRODUCTS($per_page: Int!, $page: Int!, $brand: String) {
-  products(per_page: $per_page, page: $page, brand: $brand) {
+query PRODUCTS($per_page: Int!, $page: Int!, $brand: String, $group: String) {
+  products(per_page: $per_page, page: $page, brand: $brand, group: $group) {
     nodes {
       id
       slug
       title
       price
+      date
+      excerpt
       images {
-        index
-        url
+        id
+        actual
+        medium
+        thumb
+        large
       }
       gender
       brands {

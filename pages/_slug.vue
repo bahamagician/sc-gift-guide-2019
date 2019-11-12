@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-4">
     <ApolloQuery
       :query="require('@/apollo/queries/PAGE.gql')"
       :variables="{ slug: this.$route.params.slug }"

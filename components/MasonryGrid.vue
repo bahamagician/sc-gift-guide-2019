@@ -9,25 +9,36 @@
         <nuxt-link :to="`/product/${product.slug}`">
           <img
             v-if="product.images"
-            :src="product.images[0].url"
+            :src="product.images[0].large"
             class="w-full h-auto rounded-t-lg"
           />
         </nuxt-link>
         <div>
-          <h2 class="py-4 text-gray-900 text-base text-center">
-            <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
-          </h2>
-          <ul class="text-gray-600 text-center -mt-3 pb-2">
-            <li class="brand" v-for="brand in product.brands" :key="brand.id">
-              <nuxt-link :to="`/brand/${brand.slug}`">{{ brand.title }}</nuxt-link>
-            </li>
-          </ul>
-          <div class="bg-gray-100 rounded-b-lg">
-            <div class="flex p-2">
-              <div class="w-1/2 text-sm">
-                <i class="far fa-calendar-alt"></i> Added 10/10/10
+          <div class="p-5">
+            <h2 class="text-gray-900 text-base text-center">
+              <nuxt-link :to="`/product/${product.slug}`">{{ product.title }}</nuxt-link>
+            </h2>
+            <ul class="text-gray-600 text-center mb-4">
+              <li class="brand" v-for="brand in product.brands" :key="brand.id">
+                <nuxt-link :to="`/brand/${brand.slug}`">{{ brand.title }}</nuxt-link>
+              </li>
+            </ul>
+            <div style="font-weight: 300" class="text-center">
+              <span v-if="product.excerpt" v-html="product.excerpt"></span>
+              <span v-else>Product excerpt</span>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-b-lg p-5">
+            <div class="flex">
+              <div class="w-1/2 text-xs text-gray-600">
+                <i class="far fa-calendar-alt"></i>
+                Added {{ $moment(product.date, "YYYYMMDD").fromNow() }}
               </div>
-              <div class="text-right w-1/2">View More</div>
+              <div class="text-right w-1/2 text-red-600">
+                <nuxt-link :to="`/product/${product.slug}`">
+                  <i class="fas fa-tags"></i> View More
+                </nuxt-link>
+              </div>
             </div>
           </div>
         </div>
