@@ -1,11 +1,11 @@
 <template>
   <div>
     <ApolloQuery
-      :query="require('@/apollo/queries/PRODUCTS.gql')"
+      :query="require('@/apollo/queries/BRAND.gql')"
       :variables="{
-        page: this.page,
-        per_page: this.per_page,
-        brand: this.$route.params.slug
+        product_page: this.page,
+        products_per_page: this.per_page,
+        slug: this.$route.params.slug
       }"
       @result="dataLoaded"
     >
@@ -17,8 +17,10 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else class="px-4">
-          <MasonryGrid :products="data.products.nodes" />
+
+        <div v-else>
+          <video-banner title="Holiday Gift Guide" video="/inner-banner.mp4" />
+          <MasonryGrid :products="data.brand.products.nodes" class="px-4" />
         </div>
       </template>
     </ApolloQuery>
@@ -28,8 +30,9 @@
 <script>
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
+import VideoBanner from "@/components/VideoBanner.vue";
 export default {
-  components: { Loading, MasonryGrid },
+  components: { Loading, MasonryGrid, VideoBanner },
   data() {
     return {
       paginatedProducts: "",

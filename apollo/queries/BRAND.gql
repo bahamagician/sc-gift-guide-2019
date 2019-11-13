@@ -1,13 +1,12 @@
-query GROUP(
+query BRAND(
   $slug: String!
   $products_per_page: Int = 10
   $product_page: Int = 1
 ) {
-  group(slug: $slug) {
+  brand(slug: $slug) {
     id
     title
     slug
-    banner
     products(per_page: $products_per_page, page: $product_page) {
       nodes {
         id

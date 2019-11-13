@@ -9,6 +9,7 @@
             :alt="title"
             v-for="image in images"
             :key="image.id"
+            @load="loaded"
           />
         </slick-slide>
         <div class="arrows flex"></div>
@@ -26,8 +27,12 @@
 <script>
 export default {
   props: ["images", "title"],
-  updated() {
-    window.dispatchEvent(new Event("resize"));
+  methods: {
+    loaded() {
+      this.$nextTick(() => {
+        window.dispatchEvent(new Event("resize"));
+      });
+    }
   },
   data() {
     return {

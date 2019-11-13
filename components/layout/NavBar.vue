@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <nav class="nav flex px-4 py-4 bg-white shadow-lg mb-4">
+  <section class="wrapper">
+    <nav class="nav flex px-4 py-4 shadow-lg mb-4">
       <div class="w-2/3 xl:w-2/12">
         <nuxt-link to="/">
           <img class="logo pr-10 -mt-2" style="width:170px; height: auto;" src="/logo.png" />
@@ -15,9 +15,7 @@
         >
           <template v-slot="{ result: { loading, error, data } }">
             <!-- Loading -->
-            <div v-if="!data">
-              Loading
-            </div>
+            <div v-if="!data">Loading</div>
             <ul v-else class="flex">
               <li class="navLinks">
                 <nuxt-link to="/">Home</nuxt-link>
@@ -93,11 +91,16 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .navLinks {
   @apply mr-6 relative text-primary uppercase;
   font-size: 13px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
+}
+.wrapper {
+  background: url("/christmas-background.jpg");
+  background-repeat: repeat-x;
+  background-color: #fff;
 }
 </style>

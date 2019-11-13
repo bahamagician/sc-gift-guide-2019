@@ -20,7 +20,7 @@
             :images="data.product.images"
             :title="data.product.title"
             class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto flex mb-4"
-            v-else
+            v-if="data.product.images[1]"
           />
 
           <div class="w-full md:w-1/2 xxl:w-1/3 xxl:mr-auto px-2">
@@ -29,8 +29,12 @@
               <i class="far fa-calendar-alt"></i>
               Added {{ $moment(data.product.date, "YYYYMMDD").fromNow() }}
             </div>
-            <div v-for="group in data.product.groups" class="my-5">
-              <nuxt-link :to="`/group/${group.slug}`">
+            <div class="my-5">
+              <nuxt-link
+                :to="`/group/${group.slug}`"
+                v-for="group in data.product.groups"
+                :key="group.id"
+              >
                 <span
                   class="rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
                 >

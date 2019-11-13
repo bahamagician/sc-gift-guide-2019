@@ -1,11 +1,11 @@
 <template>
   <div>
     <ApolloQuery
-      :query="require('@/apollo/queries/PRODUCTS.gql')"
+      :query="require('@/apollo/queries/GROUP.gql')"
       :variables="{
-        page: this.page,
-        per_page: this.per_page,
-        group: this.$route.params.slug
+        product_page: this.page,
+        products_per_page: this.per_page,
+        slug: this.$route.params.slug
       }"
     >
       <template v-slot="{ result: { loading, error, data } }">
@@ -16,8 +16,9 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else class="px-4">
-          <MasonryGrid :products="data.products.nodes" />
+        <div v-else>
+          <video-banner :title="data.group.title" video="/inner-banner.mp4" />
+          <MasonryGrid :products="data.group.products.nodes" class="px-4" />
         </div>
       </template>
     </ApolloQuery>
@@ -27,8 +28,9 @@
 <script>
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
+import VideoBanner from "@/components/VideoBanner.vue";
 export default {
-  components: { Loading, MasonryGrid },
+  components: { Loading, MasonryGrid, VideoBanner },
   data() {
     return {
       per_page: 10,

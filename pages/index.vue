@@ -1,5 +1,54 @@
 <template>
   <div>
+    <video-banner title="Holiday Gift Guide" video="/video.mp4" />
+    <div class="flex flex-wrap mb-6">
+      <div class="w-full lg:w-1/2 flex">
+        <div class="w-1/2 flex flex-col pl-4 px-2 pb-2 lg:pb-0">
+          <div class="pb-2 relative">
+            <div class="button-overlay">
+              <button class="button">Gifts for Him</button>
+            </div>
+            <img class="w-full block" src="https://via.placeholder.com/910x780" alt />
+          </div>
+          <div class="pt-2 relative">
+            <div class="button-overlay">
+              <button class="button">Gifts for Kids</button>
+            </div>
+            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+          </div>
+        </div>
+        <div class="w-1/2 px-2 pr-4 lg:pr-2">
+          <div class="relative">
+            <div class="button-overlay">
+              <button class="button">Gifts for Her</button>
+            </div>
+            <img class="w-full" src="https://via.placeholder.com/910x1565" alt />
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 flex flex-col px-2 pr-4 pl-4 lg:pl-2 pt-2 lg:pt-0">
+        <div class="flex pb-2">
+          <div class="w-1/2 pr-2 relative">
+            <div class="button-overlay">
+              <button class="button">Stocking Stuffers</button>
+            </div>
+            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+          </div>
+          <div class="w-1/2 pl-2 relative">
+            <div class="button-overlay">
+              <button class="button">Secret Santa</button>
+            </div>
+            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+          </div>
+        </div>
+        <div class="pt-2 relative">
+          <div class="button-overlay">
+            <button class="button">Splurge Worthy</button>
+          </div>
+          <img class="w-full" src="https://via.placeholder.com/1820x765" />
+        </div>
+      </div>
+    </div>
     <ApolloQuery
       :query="require('@/apollo/queries/PRODUCTS.gql')"
       :variables="{
@@ -27,8 +76,9 @@
 <script>
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
+import VideoBanner from "@/components/VideoBanner.vue";
 export default {
-  components: { Loading, MasonryGrid },
+  components: { Loading, MasonryGrid, VideoBanner },
   data() {
     return {
       paginatedProducts: "",
@@ -44,3 +94,17 @@ export default {
   scrollToTop: true
 };
 </script>
+<style scoped>
+.button {
+  @apply rounded-full text-white bg-highlight uppercase px-2 py-1 text-xl font-bold mr-3;
+}
+.button-overlay {
+  @apply inset-0 flex flex-wrap absolute text-center items-center justify-center font-display text-white;
+}
+
+@variants focus {
+  .button {
+    @apply outline-none;
+  }
+}
+</style>
