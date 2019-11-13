@@ -19,7 +19,7 @@
         </div>
 
         <div v-else>
-          <video-banner title="Holiday Gift Guide" video="/inner-banner.mp4" />
+          <video-banner :title="`${data.brand.title} Gifts`" video="/inner-banner.mp4" />
           <MasonryGrid :products="data.brand.products.nodes" class="px-4" />
         </div>
       </template>

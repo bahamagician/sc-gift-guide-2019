@@ -1,6 +1,6 @@
 <template>
   <div>
-    <video-banner title="Holiday Gift Guide" video="/video.mp4" />
+    <video-banner title="Holiday Gift Guide" video="/inner-banner.mp4" />
     <div class="flex flex-wrap mb-6">
       <div class="w-full lg:w-1/2 flex">
         <div class="w-1/2 flex flex-col pl-4 px-2 pb-2 lg:pb-0">
@@ -49,12 +49,25 @@
         </div>
       </div>
     </div>
-    <div class="font-display relative py-6 mb-3">
+
+    <div class="flex bg-white ct-shadow pt-3">
+      <div class="ml-auto w-1/3 pt-3">
+        <img src="/gift-card.jpg" alt="Gift Card" />
+      </div>
+      <div class="mr-auto w-1/3 text-gray-600 flex flex-col justify-center">
+        <h2 class="font-display" style="font-size:60px">Not Sure what to get?</h2>
+        <p>Sports Center Gift Cards are the most popular gift in the country.</p>
+        <p>So if you're not sure what to get that special someone this year, then give them the gift that let's them get what they really want.</p>
+        <p class="font-display mt-3 text-xl">A gift card from The Sports Center ALWAYS WORKS!</p>
+      </div>
+    </div>
+
+    <div class="font-display relative py-6 mb-3 bg-primary">
       <div class="inset-0 flex flex-wrap absolute text-center items-center justify-center">
-        <h2 style="font-size:60px" class="text-gray-600 text-center">Featured Gifts</h2>
+        <h2 style="font-size:60px" class="text-white text-center">Featured Gifts</h2>
       </div>
       <div>
-        <i class="text-gray-400 fas fa-gifts text-center block" style="font-size:70px"></i>
+        <i class="text-white opacity-50 fas fa-gifts text-center block" style="font-size:70px"></i>
       </div>
     </div>
     <ApolloQuery
@@ -114,5 +127,9 @@ export default {
   .button {
     @apply outline-none;
   }
+}
+.ct-shadow {
+  box-shadow: inset 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 </style>
