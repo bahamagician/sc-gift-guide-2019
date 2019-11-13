@@ -8,13 +8,13 @@
             <div class="button-overlay">
               <button class="button">Gifts for Him</button>
             </div>
-            <img class="w-full block" src="https://via.placeholder.com/910x780" alt />
+            <img class="w-full block" src="/gifts-for-him.jpg" alt="gifts for him" />
           </div>
           <div class="pt-2 relative">
             <div class="button-overlay">
               <button class="button">Gifts for Kids</button>
             </div>
-            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+            <img class="w-full" src="/gifts-for-kids.jpg" alt="gifts for kids" />
           </div>
         </div>
         <div class="w-1/2 px-2 pr-4 lg:pr-2">
@@ -22,7 +22,7 @@
             <div class="button-overlay">
               <button class="button">Gifts for Her</button>
             </div>
-            <img class="w-full" src="https://via.placeholder.com/910x1565" alt />
+            <img class="w-full" src="/gifts-for-her.jpg" alt="gifts for her" />
           </div>
         </div>
       </div>
@@ -32,20 +32,20 @@
             <div class="button-overlay">
               <button class="button">Stocking Stuffers</button>
             </div>
-            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+            <img class="w-full" src="/stocking-stuffers.jpg" alt="stocking stuffers" />
           </div>
           <div class="w-1/2 pl-2 relative">
             <div class="button-overlay">
               <button class="button">Secret Santa</button>
             </div>
-            <img class="w-full" src="https://via.placeholder.com/910x780" alt />
+            <img class="w-full" src="/secret-santa.jpg" alt="secret santa" />
           </div>
         </div>
         <div class="pt-2 relative">
           <div class="button-overlay">
             <button class="button">Splurge Worthy</button>
           </div>
-          <img class="w-full" src="https://via.placeholder.com/1820x765" />
+          <img class="w-full" src="/splurge-worthy.jpg" alt="splurge worthy" />
         </div>
       </div>
     </div>
