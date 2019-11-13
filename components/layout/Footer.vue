@@ -3,13 +3,13 @@
     <div class="bg-darkGrey shadow-inner">
       <div class="mx-auto px-4 py-4 flex">
         <div class="w-full text-center text-center">
-          <h2 class="font-display">Don't See What You're Looking For?</h2>
-          <p>We partner with equipment providers throughout the world, so if you can't find what you're looking for, simply let us know and we'll get on it right away!</p>
+          <h2 class="font-display" style="font-size:60px">Don't See What You're Looking For?</h2>
+          <p>A gift card from the Sports Center always works. Visit one of our three locations and get them exactly what they want this year</p>
           <p class="py-4">
-            <nuxt-link
-              class="text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
-              to="/contact-us"
-            >Contact Us</nuxt-link>
+            <a
+              class="rounded-lg text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
+              href="http://sportscenter242.com/#/contact"
+            >Contact Us</a>
           </p>
         </div>
       </div>

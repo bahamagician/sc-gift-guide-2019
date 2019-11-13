@@ -25,6 +25,9 @@ export default {
 .video-text {
   @apply inset-0 flex flex-wrap absolute text-center items-center  justify-center font-display text-white;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5z' fill-opacity='.56' fill-rule='evenodd'/%3E%3C/svg%3E");
-  font-size: 100px;
+  font-size: 50px;
+  @screen lg {
+    font-size: 100px;
+  }
 }
 </style>

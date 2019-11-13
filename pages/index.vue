@@ -49,6 +49,14 @@
         </div>
       </div>
     </div>
+    <div class="font-display relative py-6 mb-3">
+      <div class="inset-0 flex flex-wrap absolute text-center items-center justify-center">
+        <h2 style="font-size:60px" class="text-gray-600 text-center">Featured Gifts</h2>
+      </div>
+      <div>
+        <i class="text-gray-400 fas fa-gifts text-center block" style="font-size:70px"></i>
+      </div>
+    </div>
     <ApolloQuery
       :query="require('@/apollo/queries/PRODUCTS.gql')"
       :variables="{
