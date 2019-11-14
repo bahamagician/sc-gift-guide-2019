@@ -8,7 +8,7 @@
           <p class="py-4">
             <a
               class="rounded-lg text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
-              href="http://sportscenter242.com/#/contact"
+              :href="cta"
             >Contact Us</a>
           </p>
         </div>
@@ -24,5 +24,11 @@
   </footer>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      cta: process.env.CTA
+    };
+  }
+};
 </script>

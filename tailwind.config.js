@@ -1,15 +1,16 @@
+require('dotenv').config();
 module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#00246a',
-        'highlight': '#f03f35',
+        'primary': process.env.PRIMARY_COLOR,
+        'highlight': process.env.HIGHLIGHT_COLOR,
         'darkGrey': '#f7f7f7',
       }
     },
     fontFamily: {
-      'display': ['Unica One'],
-      'body': ['Roboto'],
+      'display': [process.env.DISPLAY_FONT],
+      'body': [process.env.BODY_FONT],
       'graduate': ['Graduate']
     },
     screens: {

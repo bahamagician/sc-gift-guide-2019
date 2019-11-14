@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 export default {
   mode: 'universal',
   /*
@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Unica+One|Roboto:100,300,400,500,900|Graduate&display=swap' }
+      { rel: 'stylesheet', href: process.env.GOOGLE_FONTS }
     ],
     script: [
       { src: 'https://kit.fontawesome.com/0382c824e2.js', crossorigin: 'anonymous'}
@@ -38,7 +38,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss', '@nuxtjs/moment'
+    '@nuxtjs/tailwindcss', '@nuxtjs/moment', '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
@@ -62,7 +62,7 @@ export default {
     clientConfigs: {
       default: {
         // required
-        httpEndpoint: 'https://fierce-taiga-68339.herokuapp.com/'
+        httpEndpoint: process.env.ENDPOINT
       },
 
     }

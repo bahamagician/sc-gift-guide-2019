@@ -50,15 +50,15 @@
       </div>
     </div>
 
-    <div class="flex bg-white ct-shadow pt-3">
-      <div class="ml-auto w-1/3 pt-3">
-        <img src="/gift-card.jpg" alt="Gift Card" />
-      </div>
-      <div class="mr-auto w-1/3 text-gray-600 flex flex-col justify-center">
-        <h2 class="font-display" style="font-size:60px">Not Sure what to get?</h2>
+    <div class="flex bg-white ct-shadow pt-3 flex-wrap flex-row-reverse px-5">
+      <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center">
+        <h2 class="gift-card-title">Not Sure what to get?</h2>
         <p>Sports Center Gift Cards are the most popular gift in the country.</p>
         <p>So if you're not sure what to get that special someone this year, then give them the gift that let's them get what they really want.</p>
         <p class="font-display mt-3 text-xl">A gift card from The Sports Center ALWAYS WORKS!</p>
+      </div>
+      <div class="ml-auto w-full md:w-1/3 pt-3 flex">
+        <img class="w-full self-end" src="/gift-card.jpg" alt="Gift Card" />
       </div>
     </div>
 
@@ -131,5 +131,12 @@ export default {
 .ct-shadow {
   box-shadow: inset 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.gift-card-title {
+  @apply font-display;
+  font-size: 40px;
+  @screen xxl {
+    font-size: 60px;
+  }
 }
 </style>

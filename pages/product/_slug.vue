@@ -27,7 +27,7 @@
             <h1 class="font-display text-2xl">{{ data.product.title }}</h1>
             <div class="text-xs text-gray-600">
               <i class="far fa-calendar-alt"></i>
-              Added {{ $moment(data.product.date, "YYYYMMDD").fromNow() }}
+              Added {{ $moment(data.product.date).fromNow() }}
             </div>
             <div class="my-5">
               <nuxt-link

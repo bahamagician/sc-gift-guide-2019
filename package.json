@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc17",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/moment": "^1.4.0",
     "jquery": "^3.4.1",
     "nuxt": "^2.0.0",

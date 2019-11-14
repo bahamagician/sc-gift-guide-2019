@@ -32,7 +32,7 @@
             <div class="flex">
               <div class="w-1/2 text-xs text-gray-600">
                 <i class="far fa-calendar-alt"></i>
-                Added {{ $moment(product.date, "YYYYMMDD").fromNow() }}
+                Added {{ $moment(product.date, "YYYY-MM-DD HH:mm").fromNow() }}
               </div>
               <div class="text-right w-1/2 text-red-600">
                 <nuxt-link :to="`/product/${product.slug}`">

@@ -3,7 +3,11 @@
     <nav class="nav flex px-4 py-4 shadow-lg mb-4">
       <div class="w-2/3 xl:w-2/12">
         <nuxt-link to="/">
-          <img class="logo pr-10 -mt-2" style="width:170px; height: auto;" src="/logo.png" />
+          <img
+            class="logo pr-10 -mt-2"
+            :style="`width:${logoWidth}px; height: auto;`"
+            :src="`/${logo}`"
+          />
         </nuxt-link>
       </div>
 
@@ -49,6 +53,8 @@ export default {
   },
   data() {
     return {
+      logo: process.env.LOGO,
+      logoWidth: process.env.LOGO_WIDTH,
       basketball: [
         {
           title: "Basketballs",
