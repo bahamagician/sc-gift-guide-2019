@@ -1,0 +1,41 @@
+query OPTIONS {
+  options {
+    enable_image_grid
+    image_1
+    image_1_text
+    image_1_url {
+      url
+      title
+    }
+    image_2
+    image_2_text
+    image_2_url {
+      url
+      title
+    }
+    image_3
+    image_3_text
+    image_3_url {
+      url
+      title
+    }
+    image_4
+    image_4_text
+    image_4_url {
+      url
+      title
+    }
+    image_5
+    image_5_text
+    image_5_url {
+      url
+      title
+    }
+    image_6
+    image_6_text
+    image_6_url {
+      url
+      title
+    }
+  }
+}

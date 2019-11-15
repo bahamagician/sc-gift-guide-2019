@@ -1,54 +1,7 @@
 <template>
   <div>
     <video-banner title="Holiday Gift Guide" video="/inner-banner.mp4" />
-    <div class="flex flex-wrap mb-6">
-      <div class="w-full lg:w-1/2 flex">
-        <div class="w-1/2 flex flex-col pl-4 px-2 pb-2 lg:pb-0">
-          <div class="pb-2 relative">
-            <div class="button-overlay">
-              <button class="button">Gifts for Him</button>
-            </div>
-            <img class="w-full block" src="/gifts-for-him.jpg" alt="gifts for him" />
-          </div>
-          <div class="pt-2 relative">
-            <div class="button-overlay">
-              <button class="button">Gifts for Kids</button>
-            </div>
-            <img class="w-full" src="/gifts-for-kids.jpg" alt="gifts for kids" />
-          </div>
-        </div>
-        <div class="w-1/2 px-2 pr-4 lg:pr-2">
-          <div class="relative">
-            <div class="button-overlay">
-              <button class="button">Gifts for Her</button>
-            </div>
-            <img class="w-full" src="/gifts-for-her.jpg" alt="gifts for her" />
-          </div>
-        </div>
-      </div>
-      <div class="w-full lg:w-1/2 flex flex-col px-2 pr-4 pl-4 lg:pl-2 pt-2 lg:pt-0">
-        <div class="flex pb-2">
-          <div class="w-1/2 pr-2 relative">
-            <div class="button-overlay">
-              <button class="button">Stocking Stuffers</button>
-            </div>
-            <img class="w-full" src="/stocking-stuffers.jpg" alt="stocking stuffers" />
-          </div>
-          <div class="w-1/2 pl-2 relative">
-            <div class="button-overlay">
-              <button class="button">Secret Santa</button>
-            </div>
-            <img class="w-full" src="/secret-santa.jpg" alt="secret santa" />
-          </div>
-        </div>
-        <div class="pt-2 relative">
-          <div class="button-overlay">
-            <button class="button">Splurge Worthy</button>
-          </div>
-          <img class="w-full" src="/splurge-worthy.jpg" alt="splurge worthy" />
-        </div>
-      </div>
-    </div>
+    <image-grid />
 
     <div class="flex bg-white ct-shadow pt-3 flex-wrap flex-row-reverse px-5">
       <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center">
@@ -98,8 +51,9 @@
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
 import VideoBanner from "@/components/VideoBanner.vue";
+import ImageGrid from "@/components/ImageGrid.vue";
 export default {
-  components: { Loading, MasonryGrid, VideoBanner },
+  components: { Loading, MasonryGrid, VideoBanner, ImageGrid },
   data() {
     return {
       paginatedProducts: "",
