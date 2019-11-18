@@ -7,7 +7,6 @@
         products_per_page: this.per_page,
         slug: this.$route.params.slug
       }"
-      @result="dataLoaded"
     >
       <template v-slot="{ result: { loading, error, data } }">
         <!-- Error -->
@@ -21,6 +20,7 @@
         <div v-else>
           <video-banner :title="`${data.brand.title} Gifts`" video="/inner-banner.mp4" />
           <MasonryGrid :products="data.brand.products.nodes" class="px-4" />
+          <pagination :pagination="data.brand.products.meta" @changePage="changePage" />
         </div>
       </template>
     </ApolloQuery>
@@ -31,18 +31,31 @@
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
 import VideoBanner from "@/components/VideoBanner.vue";
+import Pagination from "@/components/Pagination.vue";
+
 export default {
-  components: { Loading, MasonryGrid, VideoBanner },
+  components: { Loading, MasonryGrid, VideoBanner, Pagination },
+  mounted() {
+    this.page = parseInt(this.$route.query.page) || 1;
+  },
+  watch: {
+    $route() {
+      this.page = this.$route.query.page || 1;
+      window.scrollTo(0, 0);
+    }
+  },
   data() {
     return {
-      paginatedProducts: "",
-      per_page: 10,
+      per_page: 1,
       page: 1
     };
   },
   methods: {
-    dataLoaded({ data }) {
-      data && (this.paginatedProducts = data.paginatedProducts);
+    changePage(page) {
+      this.$router.push({
+        path: this.$route.path,
+        query: { page }
+      });
     }
   },
   scrollToTop: true
