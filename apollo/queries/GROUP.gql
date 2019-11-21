@@ -12,10 +12,12 @@ query GROUP(
       nodes {
         id
         slug
+        sku
         title
         price
         date
         excerpt
+        description
         images {
           id
           actual

@@ -7,6 +7,7 @@ query PRODUCTS($per_page: Int!, $page: Int!, $brand: String, $group: String) {
       price
       date
       excerpt
+      description
       images {
         id
         actual

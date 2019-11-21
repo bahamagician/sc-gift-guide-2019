@@ -14,7 +14,11 @@
             class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto flex mb-4"
             v-if="!data.product.images[1]"
           >
-            <img class="px-2" :src="data.product.images[0].large" :alt="data.product.title" />
+            <img
+              class="px-2"
+              :src="data.product.images[0].large"
+              :alt="data.product.title"
+            />
           </div>
           <carousel
             :images="data.product.images"
@@ -24,7 +28,16 @@
           />
 
           <div class="w-full md:w-1/2 xxl:w-1/3 xxl:mr-auto px-2">
-            <h1 class="font-display text-2xl">{{ data.product.title }}</h1>
+            <h1 class="font-display text-3xl">{{ data.product.title }}</h1>
+            <div class="text-sm pb-4" v-if="data.product.sku">
+              SKU: {{ data.product.sku }}
+            </div>
+            <div
+              class="font-display text-2xl pb-4 text-primary"
+              v-if="data.product.price"
+            >
+              {{ data.product.price | currency }}
+            </div>
             <div class="text-xs text-gray-600">
               <i class="far fa-calendar-alt"></i>
               Added {{ $moment(data.product.date).fromNow() }}
@@ -42,18 +55,20 @@
                   {{ group.title }}
                 </span>
               </nuxt-link>
+              <nuxt-link
+                :to="`/brand/${brand.slug}`"
+                v-for="brand in data.product.brands"
+                :key="brand.id"
+              >
+                <span
+                  class="rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
+                >
+                  <i class="fas fa-tag"></i>
+                  {{ brand.title }}
+                </span>
+              </nuxt-link>
             </div>
             <div v-html="data.product.description" class="mb-4"></div>
-            <div>
-              <ul class="text-gray-600 uppercase text-xs">
-                <li v-for="brand in data.product.brands" class="inline underline">
-                  <nuxt-link :to="`/brand/${brand.slug}`">
-                    <i class="fas fa-tag"></i>
-                    {{ brand.title }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </template>
@@ -67,3 +82,8 @@ export default {
   components: { Loading, Carousel }
 };
 </script>
+<style scoped>
+/deep/ p {
+  margin-bottom: 20px;
+}
+</style>

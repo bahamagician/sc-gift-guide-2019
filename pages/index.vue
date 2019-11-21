@@ -14,22 +14,13 @@
         <img class="w-full self-end" src="/gift-card.jpg" alt="Gift Card" />
       </div>
     </div>
-
-    <div class="font-display relative py-6 mb-3 bg-primary">
-      <div class="inset-0 flex flex-wrap absolute text-center items-center justify-center">
-        <h2 style="font-size:60px" class="text-white text-center">Featured Gifts</h2>
-      </div>
-      <div>
-        <i class="text-white opacity-50 fas fa-gifts text-center block" style="font-size:70px"></i>
-      </div>
-    </div>
     <ApolloQuery
-      :query="require('@/apollo/queries/PRODUCTS.gql')"
+      :query="require('@/apollo/queries/GROUP.gql')"
       :variables="{
-        page: this.page,
-        per_page: this.per_page
+        product_page: 1,
+        products_per_page: 15,
+        slug: 'featured'
       }"
-      @result="dataLoaded"
     >
       <template v-slot="{ result: { loading, error, data } }">
         <!-- Error -->
@@ -39,9 +30,21 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else class="px-4">
-          <MasonryGrid :products="data.products.nodes" />
+        <div v-else-if="data.group">
+          <div class="font-display relative py-6 mb-3 bg-primary">
+            <div class="inset-0 flex flex-wrap absolute text-center items-center justify-center">
+              <h2 style="font-size:60px" class="text-white text-center">Featured Gifts</h2>
+            </div>
+            <div>
+              <i
+                class="text-white opacity-50 fas fa-gifts text-center block"
+                style="font-size:70px"
+              ></i>
+            </div>
+          </div>
+          <MasonryGrid id="product-grid" :products="data.group.products.nodes" class="px-4" />
         </div>
+        <div v-else></div>
       </template>
     </ApolloQuery>
   </div>

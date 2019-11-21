@@ -6,6 +6,7 @@ query PRODUCT($slug: String!) {
     sku
     gender
     date
+    price
     images {
       id
       actual

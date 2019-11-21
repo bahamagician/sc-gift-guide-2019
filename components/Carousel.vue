@@ -53,7 +53,7 @@ export default {
       },
       thumbOptions: {
         infinite: false,
-        slidesToShow: 2,
+        slidesToShow: 4,
         asNavFor: ".slider-for",
         vertical: true,
         focusOnSelect: true,
