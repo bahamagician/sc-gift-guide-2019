@@ -11,7 +11,7 @@
         </div>
         <div v-else class="container mx-auto flex flex-wrap">
           <div
-            class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto flex mb-4"
+            class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto mb-4"
             v-if="!data.product.images[1]"
           >
             <img
@@ -28,7 +28,7 @@
           />
 
           <div class="w-full md:w-1/2 xxl:w-1/3 xxl:mr-auto px-2">
-            <h1 class="font-display text-3xl">{{ data.product.title }}</h1>
+            <h1 class="font-display text-3xl" v-html="data.product.title"></h1>
             <div class="text-sm pb-4" v-if="data.product.sku">
               SKU: {{ data.product.sku }}
             </div>
@@ -85,5 +85,22 @@ export default {
 <style scoped>
 /deep/ p {
   margin-bottom: 20px;
+}
+/deep/ .wp-block-embed__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+/deep/ .wp-block-embed__wrapper iframe,
+.wp-block-embed__wrapper object,
+.wp-block-embed__wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

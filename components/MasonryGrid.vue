@@ -18,9 +18,10 @@
         <div>
           <div class="p-5">
             <h2 class="text-gray-900 text-base text-center">
-              <nuxt-link :to="`/product/${product.slug}`">{{
-                product.title
-              }}</nuxt-link>
+              <nuxt-link
+                :to="`/product/${product.slug}`"
+                v-html="product.title"
+              ></nuxt-link>
             </h2>
             <ul class="text-gray-600 text-center mb-4">
               <li class="brand" v-for="brand in product.brands" :key="brand.id">
