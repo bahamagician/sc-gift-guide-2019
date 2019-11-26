@@ -1,7 +1,7 @@
 <template>
   <div>
     <video-banner title="Holiday Gift Guide" video="/inner-banner.mp4" />
-    <image-grid />
+    <home-image-grid />
 
     <div class="flex bg-white ct-shadow pt-3 flex-wrap flex-row-reverse px-5">
       <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center">
@@ -54,9 +54,9 @@
 import Loading from "@/components/Loading.vue";
 import MasonryGrid from "@/components/MasonryGrid.vue";
 import VideoBanner from "@/components/VideoBanner.vue";
-import ImageGrid from "@/components/ImageGrid.vue";
+import HomeImageGrid from "@/components/HomeImageGrid.vue";
 export default {
-  components: { Loading, MasonryGrid, VideoBanner, ImageGrid },
+  components: { Loading, MasonryGrid, VideoBanner, HomeImageGrid },
   data() {
     return {
       paginatedProducts: "",

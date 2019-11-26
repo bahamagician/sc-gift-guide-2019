@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4">
+  <div>
     <ApolloQuery
       :query="require('@/apollo/queries/PAGE.gql')"
       :variables="{ slug: this.$route.params.slug }"
@@ -10,9 +10,12 @@
           <Loading />
         </div>
         <div v-else>
-          <h1>{{ data.page.title }}</h1>
+          <video-banner :title="data.page.title" video="/inner-banner.mp4" />
           <div v-html="data.page.body"></div>
           <div>{{ data.page.featuredImage }}</div>
+          <div v-if="data.page.grid.enable_image_grid">
+            <image-grid :data="data.page.grid" />
+          </div>
         </div>
       </template>
     </ApolloQuery>
@@ -20,9 +23,10 @@
 </template>
 <script>
 import Loading from "@/components/Loading.vue";
-
+import ImageGrid from "@/components/ImageGrid.vue";
+import VideoBanner from "@/components/VideoBanner.vue";
 export default {
-  components: { Loading },
+  components: { Loading, ImageGrid, VideoBanner },
   scrollToTop: true
 };
 </script>

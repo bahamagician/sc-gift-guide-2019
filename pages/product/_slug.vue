@@ -83,6 +83,9 @@ export default {
 };
 </script>
 <style scoped>
+/deep/ h2 {
+  @apply text-2xl font-display mb-3;
+}
 /deep/ p {
   margin-bottom: 20px;
 }
@@ -92,6 +95,7 @@ export default {
   padding-top: 30px;
   height: 0;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 /deep/ .wp-block-embed__wrapper iframe,
@@ -102,5 +106,42 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/deep/ th {
+  padding-bottom: 10px;
+}
+
+/deep/ td,
+th {
+  padding: 0.5rem 0.625rem 0.625rem;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/deep/ #machine-specs-tab tbody,
+#machine-specs-tab tfoot,
+#machine-specs-tab thead {
+  border: 1px solid #f1f1f1;
+  background-color: #fefefe;
+  text-align: left;
+}
+
+/deep/ table#machine-specs-tab {
+  font-size: 10px;
+  text-transform: uppercase;
+  display: table;
+  border-collapse: separate !important;
+  border-spacing: 2px !important;
+  border-color: grey !important;
+}
+
+/deep/ #machine-specs-tab h3 {
+  font-size: 25px;
+  @apply font-display;
+}
+/deep/ #machine-specs-tab tbody tr:nth-child(2n) {
+  border-bottom: 0;
+  background-color: #f1f1f1;
 }
 </style>

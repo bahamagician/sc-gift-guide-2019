@@ -144,4 +144,12 @@ button:focus {
 /deep/ .slick-dotted {
   margin-bottom: 10px;
 }
+/deep/ .slider-for,
+/deep/ .slider-nav {
+  display: none;
+}
+/deep/ .slider-for.slick-initialized,
+/deep/ .slider-nav.slick-initialized {
+  display: block !important;
+}
 </style>
