@@ -18,7 +18,7 @@
       :query="require('@/apollo/queries/GROUP.gql')"
       :variables="{
         product_page: 1,
-        products_per_page: 15,
+        products_per_page: 20,
         slug: 'featured'
       }"
     >
