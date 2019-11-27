@@ -5,14 +5,14 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: process.env.TITLE || "Holiday Gift Guide",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: process.env.DESCRIPTION || "Make this holiday special"
       }
     ],
     link: [
@@ -33,10 +33,13 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/css/styles.css"],
+  css: ["@/assets/css/styles.css", "slick-carousel/slick/slick.css"],
   /*
    ** Plugins to load before mounting the App
    */
+  purgeCSS: {
+    whitelistPatterns: [/^slick/],
+  },
   plugins: [
     "@/plugins/masonry",
     "@/plugins/currencyfilter",
