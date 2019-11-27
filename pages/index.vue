@@ -73,6 +73,9 @@ export default {
 };
 </script>
 <style scoped>
+p {
+  margin-bottom: 10px;
+}
 .button {
   @apply rounded-full text-white bg-highlight uppercase px-2 py-1 text-xl font-bold mr-3;
 }
@@ -91,7 +94,7 @@ export default {
 }
 .gift-card-title {
   @apply font-display;
-  font-size: 40px;
+  font-size: 30px;
   @screen xxl {
     font-size: 60px;
   }

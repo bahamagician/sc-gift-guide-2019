@@ -67,8 +67,14 @@ export default {
 </script>
 <style scoped>
 .button {
-  @apply rounded-full text-white bg-highlight uppercase px-2 py-1 text-xl font-bold mr-3;
+  @apply rounded-full text-white bg-highlight uppercase px-2 py-1 text-sm font-bold mr-3;
 }
+@screen md {
+  .button {
+    @apply text-xl;
+  }
+}
+
 .button-overlay {
   @apply inset-0 flex flex-wrap absolute text-center items-center justify-center font-display text-white;
 }
