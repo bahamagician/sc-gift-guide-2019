@@ -29,6 +29,12 @@
         Prices displayed on website are not inclusive of VAT.
       </div>
     </div>
+    <script
+      id="CookieDeclaration"
+      src="https://consent.cookiebot.com/6cabd945-7eb4-472d-948d-af99a6886b41/cd.js"
+      type="text/javascript"
+      async
+    ></script>
   </footer>
 </template>
 <script>
