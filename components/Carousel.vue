@@ -1,30 +1,28 @@
 <template>
-  <client-only>
-    <div>
-      <div class="w-1/6 hidden lg:block">
-        <client-only>
-          <slick-slide ref="slickNav" :options="thumbOptions" class="slider-nav">
-            <img
-              class="rimage__img"
-              :src="image.medium"
-              :alt="title"
-              v-for="image in images"
-              :key="image.id"
-              @load="loaded"
-            />
-          </slick-slide>
-          <div class="arrows flex"></div>
-        </client-only>
-      </div>
-      <div class="w-full lg:w-5/6 px-2">
-        <client-only>
-          <slick-slide ref="slick" :options="largeOptions" class="slider-for">
-            <img :src="image.large" :alt="title" v-for="image in images" :key="image.id" />
-          </slick-slide>
-        </client-only>
-      </div>
+  <div>
+    <div class="w-1/6 hidden lg:block">
+      <client-only>
+        <slick-slide ref="slickNav" :options="thumbOptions" class="slider-nav">
+          <img
+            class="rimage__img"
+            :src="image.medium"
+            :alt="title"
+            v-for="image in images"
+            :key="image.id"
+            @load="loaded"
+          />
+        </slick-slide>
+        <div class="arrows flex"></div>
+      </client-only>
     </div>
-  </client-only>
+    <div class="w-full lg:w-5/6 px-2">
+      <client-only>
+        <slick-slide ref="slick" :options="largeOptions" class="slider-for">
+          <img :src="image.large" :alt="title" v-for="image in images" :key="image.id" />
+        </slick-slide>
+      </client-only>
+    </div>
+  </div>
 </template>
 <script>
 export default {

@@ -42,7 +42,7 @@ export default {
     whitelistPatterns: [/^slick/],
   },
   plugins: [
-    "@/plugins/masonry",
+    { src: "@/plugins/masonry", mode: "client"},
     "@/plugins/currencyfilter",
     "@/plugins/filters",
     { src: "~plugins/slick-slide.js", mode: "client" }
