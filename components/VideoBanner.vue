@@ -1,5 +1,5 @@
 <template>
-  <div class="video-wrapper">
+  <!-- <div class="flex relative -mt-4 mb-6 hidden lg:inline-block">
     <div class="video-text">
       <div class="w-full">
         <p>{{ title }}</p>
@@ -8,7 +8,7 @@
     <video autoplay="autoplay" muted loop="loop" poster="/poster.jpg">
       <source :src="video" type="video/mp4" />
     </video>
-  </div>
+  </div>-->
 </template>
 <script>
 export default {
@@ -17,7 +17,6 @@ export default {
 </script>
 <style scoped>
 .video-wrapper {
-  @apply flex relative -mt-4 mb-6;
 }
 .video-wrapper video {
   @apply w-full;
