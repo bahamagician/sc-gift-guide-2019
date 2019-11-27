@@ -10,15 +10,8 @@
           <Loading />
         </div>
         <div v-else class="container mx-auto flex flex-wrap">
-          <div
-            class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto mb-4"
-            v-if="!data.product.images[1]"
-          >
-            <img
-              class="px-2"
-              :src="data.product.images[0].large"
-              :alt="data.product.title"
-            />
+          <div class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto mb-4" v-if="!data.product.images[1]">
+            <img class="px-2" :src="data.product.images[0].large" :alt="data.product.title" />
           </div>
           <carousel
             :images="data.product.images"
@@ -29,15 +22,11 @@
 
           <div class="w-full md:w-1/2 xxl:w-1/3 xxl:mr-auto px-2">
             <h1 class="font-display text-3xl" v-html="data.product.title"></h1>
-            <div class="text-sm pb-4" v-if="data.product.sku">
-              SKU: {{ data.product.sku }}
-            </div>
+            <div class="text-sm pb-4" v-if="data.product.sku">SKU: {{ data.product.sku }}</div>
             <div
               class="font-display text-2xl pb-4 text-primary"
               v-if="data.product.price"
-            >
-              {{ data.product.price | currency }}
-            </div>
+            >{{ data.product.price | currency }}</div>
             <div class="text-xs text-gray-600">
               <i class="far fa-calendar-alt"></i>
               Added {{ $moment(data.product.date).fromNow() }}
@@ -85,6 +74,13 @@ export default {
 <style scoped>
 /deep/ h2 {
   @apply text-2xl font-display mb-3;
+}
+/deep/ ul {
+  @apply list-disc ml-5;
+}
+
+/deep/ li {
+  @apply mb-2;
 }
 /deep/ p {
   margin-bottom: 20px;
