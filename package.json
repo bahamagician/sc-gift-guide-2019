@@ -23,6 +23,7 @@
     "vue-slick": "^1.1.15"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.2.1",
     "@nuxtjs/tailwindcss": "^1.0.0"
   }
 }

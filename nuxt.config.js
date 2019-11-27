@@ -23,6 +23,12 @@ export default {
       {
         src: "https://kit.fontawesome.com/0382c824e2.js",
         crossorigin: "anonymous"
+      },
+      {
+        id: "Cookiebot",
+        src: "https://consent.cookiebot.com/uc.js",
+        'data-cbid': "6cabd945-7eb4-472d-948d-af99a6886b41",
+        'data-blockingmode':"auto"
       }
     ]
   },
@@ -54,8 +60,12 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/moment",
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@nuxtjs/google-analytics"
   ],
+   googleAnalytics: {
+    id: process.env.ANALYTICS
+  },
   /*
    ** Nuxt.js modules
    */
