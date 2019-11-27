@@ -38,7 +38,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   purgeCSS: {
-    enabled: false,
+    // enabled: false,
     whitelistPatterns: [/^slick/]
   },
   plugins: [
