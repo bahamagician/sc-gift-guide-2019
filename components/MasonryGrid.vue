@@ -1,10 +1,10 @@
 <template>
-  <masonry
+  <div>{{ products }}</div>
+  <!-- <masonry
     v-if="!initialloading"
     :cols="{ default: 5, 2000: 4, 1500: 3, 1000: 2, 700: 1 }"
     :gutter="{ default: '30px', 700: '15px' }"
   >
-    {{ products }}
     <div v-for="product in products" :key="product.id">
       <div class="border-solid border border-gray-300 bg-white shadow-lg mb-5 rounded-lg relative">
         <nuxt-link :to="`/product/${product.slug}`">
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-  </masonry>
+  </masonry>-->
 </template>
 <script>
 import VClamp from "vue-clamp";
