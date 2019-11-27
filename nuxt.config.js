@@ -16,7 +16,7 @@ export default {
       }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: `/${process.env.FAVICON}` },
       { rel: "stylesheet", href: process.env.GOOGLE_FONTS }
     ],
     script: [
