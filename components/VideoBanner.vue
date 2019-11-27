@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div class="text-center font-display text-3xl pb-5 pt-3 lg:hidden">{{ title }}</div>
-    <div class="video-wrapper flex relative -mt-4 mb-6 hidden lg:block">
-      <div class="video-text">
-        <div class="w-full">
-          <p>{{ title }}</p>
-        </div>
-      </div>
-      <video autoplay="autoplay" muted loop="loop" poster="/poster.jpg">
-        <source :src="video" type="video/mp4" />
-      </video>
+    <div class="text-center font-display text-3xl pb-5 pt-3 lg:hidden">
+      {{ title }}
     </div>
+    <mq-layout mq="md+">
+      <div class="video-wrapper flex relative -mt-4 mb-6 hidden lg:block">
+        <div class="video-text">
+          <div class="w-full">
+            <p>{{ title }}</p>
+          </div>
+        </div>
+        <video autoplay="autoplay" muted loop="loop" poster="/poster.jpg">
+          <source :src="video" type="video/mp4" />
+        </video>
+      </div>
+    </mq-layout>
   </div>
 </template>
 <script>

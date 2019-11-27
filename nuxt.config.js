@@ -39,10 +39,10 @@ export default {
    */
   purgeCSS: {
     enabled: false,
-    whitelistPatterns: [/^slick/],
+    whitelistPatterns: [/^slick/]
   },
   plugins: [
-    { src: "@/plugins/masonry", mode: "client"},
+    { src: "@/plugins/masonry", mode: "client" },
     "@/plugins/currencyfilter",
     "@/plugins/filters",
     { src: "~plugins/slick-slide.js", mode: "client" }
@@ -59,7 +59,23 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/apollo"],
+  modules: [
+    "@nuxtjs/apollo",
+    [
+      "nuxt-mq",
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: "default",
+        breakpoints: {
+          sm: 640,
+          md: 758,
+          lg: 1024,
+          xl: 1280,
+          xxl: Infinity
+        }
+      }
+    ]
+  ],
 
   // Give apollo module options
   apollo: {
@@ -94,6 +110,6 @@ export default {
   },
   server: {
     port: 3000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  }   // other configs
+    host: "0.0.0.0" // default: localhost
+  } // other configs
 };
