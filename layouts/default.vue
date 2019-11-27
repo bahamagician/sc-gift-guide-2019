@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <Header />
       <!-- Content -->
-      <nuxt />
+      <nuxt :key="$route.fullPath" />
     </div>
     <Footer />
   </div>

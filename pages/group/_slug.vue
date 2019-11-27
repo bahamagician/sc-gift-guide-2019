@@ -8,7 +8,7 @@
         slug: this.$route.params.slug
       }"
     >
-      <template v-slot="{ result: { loading, error, data } }">
+      <template v-slot="{ result: { loading, error, data }, query }">
         <!-- Error -->
         <div v-if="error">
           <Error :error="error" />
