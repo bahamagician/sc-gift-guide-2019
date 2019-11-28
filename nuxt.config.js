@@ -54,12 +54,8 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/moment",
-    "@nuxtjs/dotenv",
-    "@nuxtjs/google-analytics"
+    "@nuxtjs/dotenv"
   ],
-   googleAnalytics: {
-    id: process.env.ANALYTICS
-  },
   /*
    ** Nuxt.js modules
    */
