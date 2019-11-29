@@ -13,7 +13,7 @@
             <img
               v-if="product.images"
               :src="product.images[0].large"
-              class="w-full h-auto rounded-t-lg mt-3"
+              class="w-full h-auto rounded-t-lg"
             />
           </nuxt-link>
           <div>
