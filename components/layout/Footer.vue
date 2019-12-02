@@ -3,9 +3,7 @@
     <div class="bg-darkGrey shadow-inner">
       <div class="mx-auto px-4 py-4 flex">
         <div class="w-full text-center text-center">
-          <h2 class="font-display" style="font-size:60px">
-            Don't See What You're Looking For?
-          </h2>
+          <h2 class="font-display" style="font-size:60px">Don't See What You're Looking For?</h2>
           <p>
             A gift card from the Sports Center always works. Visit one of our
             three locations and get them exactly what they want this year
@@ -14,8 +12,7 @@
             <a
               class="rounded-lg text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
               :href="cta"
-              >Contact Us</a
-            >
+            >Contact Us</a>
           </p>
         </div>
       </div>
@@ -23,11 +20,20 @@
 
     <div class="bg-primary text-white px-4 py-4 flex">
       <div class="full sm:w-2/3 text-center sm:text-left">
-        &copy; 2019 The Sports Center Ltd.
+        &copy; 2019 The Sports Center Ltd. |
+        <a
+          class="underline"
+          href="http://sportscenter242.com/#/privacy"
+        >Privacy Policy</a>
+        |
+        <a
+          class="underline"
+          href="http://sportscenter242.com/#/cookie-consent"
+        >Cookie Consent</a>
       </div>
-      <div class="sm:w-1/3 text-right hidden sm:block">
-        Prices displayed on website are not inclusive of VAT.
-      </div>
+      <div
+        class="sm:w-1/3 text-right hidden sm:block"
+      >Prices displayed on website are not inclusive of VAT.</div>
     </div>
     <script
       id="CookieDeclaration"
