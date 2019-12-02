@@ -3,11 +3,14 @@
     <div class="bg-primary border-t-2 border-highlight text-white px-4 py-4 flex">
       <div class="w-full md:w-2/3 text-center md:text-left">
         <a :href="`tel:${phone}`">
-          <i aria-hidden="true" class="fa fa-phone"></i> {{ phone }}
-        </a> &nbsp; · &nbsp;
+          <i aria-hidden="true" class="fa fa-phone"></i>
+          {{ phone }}
+        </a>
+        <span class="hidden md:inline">&nbsp; · &nbsp;</span>
         <span class="contact-email">
           <a :href="`mailto:${email}`">
-            <i aria-hidden="true" class="fa fa-envelope"></i> {{ email }}
+            <i aria-hidden="true" class="fa fa-envelope"></i>
+            {{ email }}
           </a>
         </span>
       </div>
@@ -37,7 +40,7 @@ export default {
       fb: process.env.FACEBOOK,
       ig: process.env.INSTAGRAM,
       twt: process.env.TWITTER
-    }
+    };
   },
   components: {
     NavBar
