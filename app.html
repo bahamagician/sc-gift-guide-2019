@@ -49,7 +49,7 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
-      fbq("init", {{ process.env.FB_PIXEL }});
+      fbq("init", "{{ process.env.FB_PIXEL }}");
       fbq("track", "PageView");
     </script>
     <!-- End Facebook Pixel Code -->
