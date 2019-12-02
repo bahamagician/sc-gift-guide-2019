@@ -13,7 +13,7 @@
     <script
       data-cookieconsent="statistics"
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-89214517-2"
+      src="https://www.googletagmanager.com/gtag/js?id=UA-{{ ENV.ANALYTICS }}"
     ></script>
     <script data-cookieconsent="statistics">
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +22,7 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "UA-89214517-2");
+      gtag("config", "UA-{{ ENV.ANALYTICS }}");
     </script>
     <!-- Facebook Pixel Code -->
     <script data-cookieconsent="marketing">
@@ -49,16 +49,9 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
-      fbq("init", "850564438691571");
+      fbq("init", {{ ENV.FB_PIXEL }});
       fbq("track", "PageView");
     </script>
-    <noscript
-      ><img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=850564438691571&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Facebook Pixel Code -->
   </head>
 
