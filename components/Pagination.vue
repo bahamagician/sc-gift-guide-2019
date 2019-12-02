@@ -6,20 +6,20 @@
     aria-label="Pagination"
   >
     <!-- Previous page button -->
-    <li v-if="pagination.currentPage > 1" class="pagination-previous inline">
+    <li v-if="pagination.currentPage > 1" class="pagination-previous inline p-4">
       <a href="#" @click.prevent="changePage(pagination.currentPage - 1)">
         Previous
         <span class="sr-only">page</span>
       </a>
     </li>
-    <li v-else class="pagination-previous inline text-gray-500">
+    <li v-else class="pagination-previous inline text-gray-500 p-4">
       Previous
       <span class="sr-only">page</span>
     </li>
 
     <li
       v-for="page in pagesNumber"
-      class="inline m-3 p-4"
+      class="m-3 p-4 hidden md:inline"
       :class="{'bg-primary text-white': page == pagination.currentPage}"
     >
       <button v-if="page == pagination.currentPage">
@@ -30,13 +30,13 @@
     </li>
 
     <!-- Next Page Button -->
-    <li v-if="pagination.currentPage < pagination.lastPage" class="pagination-next inline">
+    <li v-if="pagination.currentPage < pagination.lastPage" class="pagination-next inline p-4">
       <a href="#" @click.prevent="changePage(pagination.currentPage + 1)" aria-label="Next page">
         Next
         <span class="sr-only">page</span>
       </a>
     </li>
-    <li v-else class="pagination-next text-gray-500 inline">
+    <li v-else class="pagination-next text-gray-500 inline p-4">
       Next
       <span class="sr-only">page</span>
     </li>

@@ -38,7 +38,7 @@
                 :key="group.id"
               >
                 <span
-                  class="rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
+                  class="inline-block mb-1 whitespace-no-wrap rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
                 >
                   <i data-v-a7fd6656 class="fas fa-link"></i>
                   {{ group.title }}
@@ -50,7 +50,7 @@
                 :key="brand.id"
               >
                 <span
-                  class="rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
+                  class="inline-block mb-1 whitespace-no-wrap rounded-full text-white bg-highlight uppercase px-2 py-1 text-xs font-bold mr-3"
                 >
                   <i class="fas fa-tag"></i>
                   {{ brand.title }}
