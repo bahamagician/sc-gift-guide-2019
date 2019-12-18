@@ -18,15 +18,9 @@
         </div>
 
         <div v-else>
-          <video-banner
-            :title="`${data.brand.title} Gifts`"
-            video="/inner-banner.mp4"
-          />
+          <video-banner :title="`${data.brand.title} Gifts`" video="/inner-banner.mp4" />
           <MasonryGrid :products="data.brand.products.nodes" class="px-4" />
-          <pagination
-            :pagination="data.brand.products.meta"
-            @changePage="changePage"
-          />
+          <pagination :pagination="data.brand.products.meta" @changePage="changePage" />
         </div>
       </template>
     </ApolloQuery>

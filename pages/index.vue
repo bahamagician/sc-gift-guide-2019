@@ -4,11 +4,18 @@
     <home-image-grid />
 
     <div class="flex bg-white ct-shadow pt-3 flex-wrap flex-row-reverse px-5">
-      <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center">
-        <h2 class="gift-card-title">Not Sure what to get?</h2>
-        <p>Sports Center Gift Cards are the most popular gift in the country.</p>
+      <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center py-6">
+        <h2 class="gift-card-title">Buy a Gift Card Online!</h2>
+        <p>Sports Center Gift Cards are the most popular gift in the country, and now you can buy them right from the comfort of your living room.</p>
+        <p>Skip the long lines and still get them what they really want this year. Buy a Sports Center eGift Card online and have it automatically sent via email or print it out and hand deliver it to that special someone.</p>
         <p>So if you're not sure what to get that special someone this year, then give them the gift that let's them get what they really want.</p>
         <p class="font-display mt-3 text-xl">A gift card from The Sports Center ALWAYS WORKS!</p>
+        <p class="py-5 text-center md:text-left">
+          <a
+            class="rounded-lg text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
+            href="https://giftcards.sportscenter242.com"
+          >Buy Gift Cards Online</a>
+        </p>
       </div>
       <div class="ml-auto w-full md:w-1/3 pt-3 flex">
         <img class="w-full self-end" src="/gift-card.jpg" alt="Gift Card" />
@@ -35,7 +42,7 @@
             <div class="inset-0 flex flex-wrap absolute text-center items-center justify-center">
               <h2 style="font-size:60px" class="text-white text-center">Featured Gifts</h2>
             </div>
-            <div>
+            <div class="text-center">
               <i
                 class="text-white opacity-50 fas fa-gifts text-center block"
                 style="font-size:70px"

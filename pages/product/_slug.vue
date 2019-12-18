@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4">
+  <div>
     <ApolloQuery
       :query="require('@/apollo/queries/PRODUCT.gql')"
       :variables="{ slug: this.$route.params.slug }"
@@ -9,7 +9,7 @@
         <div v-if="!data">
           <Loading />
         </div>
-        <div v-else class="container mx-auto flex flex-wrap">
+        <div v-else class="container mx-auto flex flex-wrap px-4">
           <div class="w-full md:w-1/2 xxl:w-1/3 xxl:ml-auto mb-4" v-if="!data.product.images[1]">
             <img class="px-2" :src="data.product.images[0].large" :alt="data.product.title" />
           </div>
@@ -58,6 +58,26 @@
               </nuxt-link>
             </div>
             <div v-html="data.product.description" class="mb-4"></div>
+          </div>
+        </div>
+        <div
+          class="flex bg-white ct-shadow pt-3 flex-wrap flex-row-reverse px-5 -mb-5 shadow-inner"
+        >
+          <div class="mr-auto w-full md:w-1/3 text-gray-600 flex flex-col justify-center py-6">
+            <h2 class="gift-card-title">Buy a Gift Card Online!</h2>
+            <p>Sports Center Gift Cards are the most popular gift in the country, and now you can buy them right from the comfort of your living room.</p>
+            <p>Skip the long lines and still get them what they really want this year. Buy a Sports Center eGift Card online and have it automatically sent via email or print it out and hand deliver it to that special someone.</p>
+            <p>So if you're not sure what to get that special someone this year, then give them the gift that let's them get what they really want.</p>
+            <p class="font-display mt-3 text-xl">A gift card from The Sports Center ALWAYS WORKS!</p>
+            <p class="py-5 text-center md:text-left">
+              <a
+                class="rounded-lg text-2xl font-display bg-highlight text-white font-bold py-2 px-4"
+                href="https://giftcards.sportscenter242.com"
+              >Buy Gift Cards Online</a>
+            </p>
+          </div>
+          <div class="ml-auto w-full md:w-1/3 pt-3 flex">
+            <img class="w-full self-end" src="/gift-card.jpg" alt="Gift Card" />
           </div>
         </div>
       </template>
@@ -139,5 +159,12 @@ th {
 /deep/ #machine-specs-tab tbody tr:nth-child(2n) {
   border-bottom: 0;
   background-color: #f1f1f1;
+}
+.gift-card-title {
+  @apply font-display;
+  font-size: 30px;
+  @screen xxl {
+    font-size: 60px;
+  }
 }
 </style>
